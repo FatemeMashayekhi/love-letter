@@ -1,0 +1,79 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8e9ec;
+}
+
+.envelope {
+  position: relative;
+  width: 320px;
+  height: 210px;
+  cursor: pointer;
+  perspective: 1000px;
+}
+
+.envelope-back {
+  position: absolute;
+  inset: 0;
+  background: #d95c75;
+  /* border-radius: 8px; */
+  z-index: 1;
+}
+
+.letter {
+  position: absolute;
+  width: 280px;
+  height: 180px;
+  left: 20px;
+  top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fffdf8;
+  border-radius: 6px;
+  z-index: 2;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.letter p {
+  margin: 0;
+  color: #d94f6d;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.envelope-front {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 140px;
+  background: #df6680;
+  clip-path: polygon(
+    0 0,
+    50% 45%,
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+  z-index: 3;
+}
+
+.flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110px;
+  background: #eb7890;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    50% 100%
+  );
+  transform-origin: top center;
+  transform-style: preserve-3d;
+  z-index: 4;
+}

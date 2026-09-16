@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import "./App.css";
+import { hearts } from "./data/hearts";
 
 export default function App() {
   const [status, setStatus] = useState("closed");
@@ -18,6 +19,34 @@ export default function App() {
 
   return (
     <main className="page">
+      <div className="hearts">
+        {hearts.map((heart, index) => (
+          <motion.span
+            key={index}
+            className="heart"
+            style={{
+              left: heart.left,
+              top: heart.top,
+              color: heart.color,
+              fontSize: heart.size,
+            }}
+            animate={{
+              y: [0, -25, 0],
+              x: [0, 8, -6, 0],
+              rotate: [-8, 10, -5, -8],
+              scale: [1, 1.15, 0.95, 1],
+            }}
+            transition={{
+              duration: 3.5 + index * 0.2,
+              delay: heart.delay,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            ♥
+          </motion.span>
+        ))}
+      </div>
       <div className="envelope" onClick={handleClick}>
         <div className="envelope-back" />
 

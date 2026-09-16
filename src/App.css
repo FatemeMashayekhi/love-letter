@@ -1,9 +1,26 @@
 .page {
+  position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   background: #f8e9ec;
+}
+
+.hearts {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.heart {
+  position: absolute;
+  display: block;
+  line-height: 1;
+  user-select: none;
+  filter: drop-shadow(0 4px 5px rgba(120, 30, 60, 0.15));
 }
 
 .envelope {
@@ -12,6 +29,7 @@
   height: 210px;
   cursor: pointer;
   perspective: 1000px;
+  z-index: 1;
 }
 
 .envelope-back {

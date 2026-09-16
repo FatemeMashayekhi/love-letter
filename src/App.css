@@ -18,9 +18,11 @@
 .heart {
   position: absolute;
   display: block;
+  font-family: Arial, sans-serif;
+  font-variant-emoji: text;
   line-height: 1;
   user-select: none;
-  filter: drop-shadow(0 4px 5px rgba(120, 30, 60, 0.15));
+  pointer-events: none;
 }
 
 .envelope {

@@ -28,22 +28,21 @@ export default function App() {
               left: heart.left,
               top: heart.top,
               color: heart.color,
+              WebkitTextFillColor: heart.color,
               fontSize: heart.size,
             }}
             animate={{
-              y: [0, -25, 0],
-              x: [0, 8, -6, 0],
-              rotate: [-8, 10, -5, -8],
-              scale: [1, 1.15, 0.95, 1],
+              y: [0, -20, 0],
+              rotate: [0, 10, 0],
             }}
             transition={{
-              duration: 3.5 + index * 0.2,
+              duration: 3 + index * 0.2,
               delay: heart.delay,
               repeat: Infinity,
               ease: "easeInOut",
             }}
           >
-            ♥
+            {"\u2665\uFE0E"}
           </motion.span>
         ))}
       </div>
